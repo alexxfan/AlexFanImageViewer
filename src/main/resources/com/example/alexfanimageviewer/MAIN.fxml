@@ -5,107 +5,30 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.alexfanimageviewer.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="737.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.alexfanimageviewer.HelloController">
    <children>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="700.0" prefWidth="750.0">
          <children>
             <BorderPane prefHeight="700.0" prefWidth="750.0">
-               <top>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="110.0" prefWidth="426.0" text="Image Viewer" textAlignment="CENTER" BorderPane.alignment="CENTER">
-                     <BorderPane.margin>
-                        <Insets />
-                     </BorderPane.margin>
-                     <font>
-                        <Font size="64.0" />
-                     </font>
-                  </Label>
-               </top>
-               <left>
-                  <VBox prefHeight="514.0" prefWidth="185.0" BorderPane.alignment="CENTER">
-                     <children>
-                        <Label text="Choose your image">
-                           <VBox.margin>
-                              <Insets left="40.0" top="50.0" />
-                           </VBox.margin>
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </Label>
-                        <Button fx:id="Load" mnemonicParsing="false" onAction="#getImage" text="Load">
-                           <VBox.margin>
-                              <Insets left="80.0" top="10.0" />
-                           </VBox.margin>
-                        </Button>
-                        <MenuButton fx:id="colourChoices" mnemonicParsing="false" text="Colour Choices">
-                          <items>
-                            <MenuItem fx:id="Gray" mnemonicParsing="false" onAction="#toGrayScale" text="Gray scale" />
-                            <MenuItem fx:id="Red" mnemonicParsing="false" onAction="#toRedScale" text="Red Scale" />
-                              <MenuItem fx:id="Green" mnemonicParsing="false" onAction="#toGreenScale" text="Green Scale" />
-                              <MenuItem fx:id="Blue" mnemonicParsing="false" onAction="#toBlueScale" text="Blue Scale" />
-                              <MenuItem mnemonicParsing="false" text="Adjustable" />
-                          </items>
-                           <VBox.margin>
-                              <Insets left="40.0" top="20.0" />
-                           </VBox.margin>
-                        </MenuButton>
-                        <Label alignment="CENTER" text="Hue">
-                           <VBox.margin>
-                              <Insets left="85.0" top="60.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Slider max="1.0" prefHeight="14.0" prefWidth="206.0" fx:id="hueSlider" onMouseDragged="#hueSlider">
-                           <VBox.margin>
-                              <Insets left="10.0" />
-                           </VBox.margin>
-                        </Slider>
-                        <Label text="Saturation">
-                           <VBox.margin>
-                              <Insets left="70.0" top="20.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Slider max="1.0" fx:id="saturationSlider" onMouseDragged="#saturationSlider">
-                           <VBox.margin>
-                              <Insets left="10.0" />
-                           </VBox.margin>
-                        </Slider>
-                        <Label text="Brightness">
-                           <VBox.margin>
-                              <Insets left="70.0" top="20.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Slider max="1.0" fx:id="brightnessSlider" onMouseDragged="#brightnessSlider">
-                           <VBox.margin>
-                              <Insets left="10.0" />
-                           </VBox.margin>
-                        </Slider>
-                        <Button fx:id="Exit" mnemonicParsing="false" onAction="#exit" text="Exit">
-                           <VBox.margin>
-                              <Insets left="80.0" top="100.0" />
-                           </VBox.margin>
-                        </Button>
-                     </children>
-                     <BorderPane.margin>
-                        <Insets />
-                     </BorderPane.margin>
-                  </VBox>
-               </left>
                <center>
                   <TabPane prefHeight="415.0" prefWidth="487.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
                      <tabs>
                         <Tab text="Normal">
                            <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="415.0" prefWidth="528.0">
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="494.0" prefWidth="550.0">
                                  <children>
-                                    <ImageView fx:id="regularImage" fitHeight="486.0" fitWidth="565.0" pickOnBounds="true" preserveRatio="true" />
+                                    <ImageView fx:id="regularImage" fitHeight="489.0" fitWidth="551.0" pickOnBounds="true" preserveRatio="true" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -114,7 +37,7 @@
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <ImageView fx:id="grayImageView" fitHeight="486.0" fitWidth="566.0" pickOnBounds="true" preserveRatio="true" />
+                                    <ImageView fx:id="grayImageView" fitHeight="492.0" fitWidth="549.0" pickOnBounds="true" preserveRatio="true" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -123,7 +46,7 @@
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <ImageView fx:id="redImage" fitHeight="485.0" fitWidth="565.0" pickOnBounds="true" preserveRatio="true" />
+                                    <ImageView fx:id="redImage" fitHeight="489.0" fitWidth="552.0" pickOnBounds="true" preserveRatio="true" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -132,7 +55,7 @@
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <ImageView fx:id="greenImage" fitHeight="487.0" fitWidth="565.0" pickOnBounds="true" preserveRatio="true" />
+                                    <ImageView fx:id="greenImage" fitHeight="490.0" fitWidth="552.0" pickOnBounds="true" preserveRatio="true" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -141,7 +64,7 @@
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <ImageView fx:id="blueImage" fitHeight="486.0" fitWidth="565.0" pickOnBounds="true" preserveRatio="true" />
+                                    <ImageView fx:id="blueImage" fitHeight="491.0" fitWidth="551.0" pickOnBounds="true" preserveRatio="true" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -150,7 +73,7 @@
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <ImageView fx:id="adjustableImage" fitHeight="487.0" fitWidth="565.0" pickOnBounds="true" preserveRatio="true" />
+                                    <ImageView fx:id="adjustableImage" fitHeight="488.0" fitWidth="552.0" pickOnBounds="true" preserveRatio="true" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -159,8 +82,9 @@
                   </TabPane>
                </center>
                <bottom>
-                  <VBox prefHeight="79.0" prefWidth="750.0" BorderPane.alignment="CENTER">
+                  <VBox prefHeight="100.0" prefWidth="750.0" BorderPane.alignment="CENTER">
                      <children>
+                        <Separator prefWidth="200.0" />
                         <Label fx:id="description">
                            <VBox.margin>
                               <Insets left="20.0" />
@@ -179,6 +103,102 @@
                      </children>
                   </VBox>
                </bottom>
+               <left>
+                  <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <VBox prefHeight="518.0" prefWidth="211.0">
+                           <children>
+                              <Label text="Choose your image">
+                                 <VBox.margin>
+                                    <Insets left="40.0" top="50.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="Load" mnemonicParsing="false" onAction="#getImage" text="Load">
+                                 <VBox.margin>
+                                    <Insets left="80.0" top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <MenuButton fx:id="colourChoices" mnemonicParsing="false" text="Colour Choices">
+                                <items>
+                                  <MenuItem fx:id="Gray" mnemonicParsing="false" onAction="#toGrayScale" text="Gray scale" />
+                                  <MenuItem fx:id="Red" mnemonicParsing="false" onAction="#toRedScale" text="Red Scale" />
+                                    <MenuItem fx:id="Green" mnemonicParsing="false" onAction="#toGreenScale" text="Green Scale" />
+                                    <MenuItem fx:id="Blue" mnemonicParsing="false" onAction="#toBlueScale" text="Blue Scale" />
+                                    <MenuItem mnemonicParsing="false" text="Adjustable" />
+                                </items>
+                                 <VBox.margin>
+                                    <Insets left="40.0" top="20.0" />
+                                 </VBox.margin>
+                              </MenuButton>
+                              <Label alignment="CENTER" text="Hue">
+                                 <VBox.margin>
+                                    <Insets left="85.0" top="60.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Slider fx:id="hueSlider" max="1.0" onMouseDragged="#hueSlider" prefHeight="14.0" prefWidth="206.0">
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </Slider>
+                              <Label text="Saturation">
+                                 <VBox.margin>
+                                    <Insets left="70.0" top="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Slider fx:id="saturationSlider" max="1.0" onMouseDragged="#saturationSlider">
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </Slider>
+                              <Label text="Brightness">
+                                 <VBox.margin>
+                                    <Insets left="70.0" top="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Slider fx:id="brightnessSlider" max="1.0" onMouseDragged="#brightnessSlider">
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </Slider>
+                              <Label text="Constrast">
+                                 <VBox.margin>
+                                    <Insets left="70.0" top="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Slider fx:id="contrastSlider" max="1.0" onMouseDragged="#contrastSlider">
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </Slider>
+                              <Button fx:id="Exit" mnemonicParsing="false" onAction="#exit" text="Exit">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="80.0" top="80.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <Separator orientation="VERTICAL" prefHeight="518.0" prefWidth="8.0" />
+                     </children>
+                  </HBox>
+               </left>
+               <top>
+                  <VBox alignment="CENTER" prefHeight="118.0" prefWidth="750.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="110.0" prefWidth="426.0" text="Image Viewer" textAlignment="CENTER">
+                           <font>
+                              <Font size="64.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <Separator prefHeight="0.0" prefWidth="750.0" />
+                     </children>
+                  </VBox>
+               </top>
             </BorderPane>
          </children>
       </AnchorPane>

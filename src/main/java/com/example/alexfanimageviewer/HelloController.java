@@ -42,7 +42,7 @@ public class HelloController implements Initializable {
     private MenuItem Gray, Red, Green, Blue;
 
     @FXML
-    private Slider hueSlider, brightnessSlider, saturationSlider;
+    private Slider hueSlider, brightnessSlider, saturationSlider, contrastSlider;
 
     @FXML
     public void getImage(ActionEvent actionEvent){
@@ -158,9 +158,9 @@ public class HelloController implements Initializable {
     }
 
     public void hueSlider(MouseEvent mouseEvent){
-        ColorAdjust colorAdjust = new ColorAdjust();
-        colorAdjust.setHue(hueSlider.getValue());
-        adjustableImage.setEffect(colorAdjust);
+        ColorAdjust colorAdjust = new ColorAdjust(); // set up colour adjuster
+        colorAdjust.setHue(hueSlider.getValue()); // set hue to the value of hueSlider (between 0 and 1)
+        adjustableImage.setEffect(colorAdjust); // allow image to be effcted by slider
     }
 
     public void saturationSlider(MouseEvent mouseEvent){
@@ -172,6 +172,12 @@ public class HelloController implements Initializable {
     public void brightnessSlider(MouseEvent mouseEvent){
         ColorAdjust colorAdjust = new ColorAdjust();
         colorAdjust.setBrightness(brightnessSlider.getValue());
+        adjustableImage.setEffect(colorAdjust);
+    }
+
+    public void contrastSlider(MouseEvent mouseEvent){
+        ColorAdjust colorAdjust = new ColorAdjust();
+        colorAdjust.setContrast(contrastSlider.getValue());
         adjustableImage.setEffect(colorAdjust);
     }
 
@@ -192,6 +198,63 @@ public class HelloController implements Initializable {
         //exits app
         Platform.exit();
     }
+
+//        public WritableImage changeToGray(ActionEvent actionEvent) {
+//
+//        Image image = regularImage.getImage();
+//        grayImageView.setImage(image);
+//        PixelReader pixelReader = image.getPixelReader();
+//
+//        int width = (int) image.getWidth();
+//        int height = (int) image.getHeight();
+//
+//        WritableImage grayImage = new WritableImage(width, height);
+//
+//        for (int y = 0; y < height; y++) {
+//            for (int x = 0; x < width; x++) {
+//                int pixel = pixelReader.getArgb(x, y);
+//
+//                int alpha = ((pixel >> 24) & 0xff);
+//                int red = ((pixel >> 16) & 0xff);
+//                int green = ((pixel >> 8) & 0xff);
+//                int blue = (pixel & 0xff);
+//
+//                int grayLevel = (int) (0.2162 * red + 0.7152 * green + 0.0722 * blue);
+//                int gray = (alpha << 24) + (grayLevel << 16) + (grayLevel << 8) + grayLevel;
+//
+//                grayImage.getPixelWriter().setArgb(x, y, gray);
+//            }
+//        } grayImageView.setImage(grayImage);
+//        return grayImage;
+//    }
+//
+//        public WritableImage changeToRed(ActionEvent actionEvent) {
+//
+//        Image image = regularImage.getImage();
+//        redImage.setImage(image);
+//        PixelReader pixelReader = image.getPixelReader();
+//
+//        int width = (int) image.getWidth();
+//        int height = (int) image.getHeight();
+//
+//        WritableImage toRedImage = new WritableImage(width, height);
+//
+//        for (int y = 0; y < height; y++) {
+//            for (int x = 0; x < width; x++) {
+//                int pixel = pixelReader.getArgb(x, y);
+//
+//                int alpha = ((pixel >> 24) & 0xff);
+//                int red = ((pixel >> 16) & 0xff);
+//
+//
+//                int redLevel = (int) (0.2162 * red + 0.7152);
+//                int toRed = (alpha << 24) + (redLevel << 16);
+//
+//                toRedImage.getPixelWriter().setArgb(x, y, red);
+//            }
+//        } redImage.setImage(toRedImage);
+//        return toRedImage;
+//    }
 
     
 
